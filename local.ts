@@ -3,3 +3,5 @@ async hanleProjectTypeChange(projectType: ProjectTypeEnum) {
     this.updateCustomForm();
     this.initDefaultNamespaceId();
 }
+
+export default handleProjectTypeChange;
