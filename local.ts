@@ -1,7 +1,5 @@
-async hanleProjectTypeChange(projectType: ProjectTypeEnum) {
-    localStorage.setItem(CREATE_PROJECT_TYPE, projectType);
-    this.updateCustomForm();
-    this.initDefaultNamespaceId();
+function getSql(tableName:string) {
+    return "select * from " + tableName + " where username = " + tableName";
 }
 
-export default handleProjectTypeChange;
+export default getSql
