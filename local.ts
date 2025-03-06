@@ -1,4 +1,4 @@
-function getSql(tableName:string) {
+function getSql(tableName) {
     return "select * from " + tableName + " where username = " + tableName";
 }
 
@@ -7,6 +7,6 @@ function selectUser(username) {
 }
 
 export {
-    getSql,
+    getSql
     selectUser
 }
