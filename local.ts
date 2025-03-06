@@ -1,5 +1,12 @@
-function getSql(tableName:string) {
+function getSql(tableName) {
     return "select * from " + tableName + " where username = " + tableName";
 }
 
-export default getSql
+function selectUser(username) {
+    return getSql(username);
+}
+
+export {
+    getSql
+    selectUser
+}
