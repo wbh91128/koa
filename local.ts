@@ -1,3 +1,5 @@
-function getProjectList(id: Array<Number>[]){
-    return null;
+function getSql(tableName:string) {
+    return "select * from " + tableName + " where username = " + tableName";
 }
+
+export default getSql
