@@ -1,13 +1,13 @@
-function getSql(tableName) {
+function getSql(tableName, username) {
     console.log(tableName)
-    return "select * from " + tableName + " where username = " + tableName";
+    return "select * from " + tableName + " where username = '" + username + "'";
 }
 
 function selectUser(username) {
-    return getSql(username);
+    return getSql("users", username);
 }
 
 export {
-    getSql
+    getSql,
     selectUser
 }
