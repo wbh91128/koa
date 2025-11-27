@@ -1,7 +1,9 @@
 function getSql(tableName, username) {
     console.log(tableName)
     console.log('debug start');
-    return "select * from " + tableName + " where username = '" + username + "'";
+    // Basic SQL injection prevention: escape single quotes
+    const escapedUsername = username.replace(/'/g, "''");
+    return "select * from " + tableName + " where username = '" + escapedUsername + "'";
 }
 
 function selectUser(username) {
@@ -9,6 +11,6 @@ function selectUser(username) {
 }
 
 export {
-    getSql
+    getSql,
     selectUser
 }
