@@ -1,4 +1,5 @@
 function getSql(tableName: string, username: string) {
+    console.log('getSql', tableName, username);
     return `select * from ${tableName} where username = '${username}'`;
 }
 
