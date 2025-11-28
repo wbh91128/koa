@@ -3,4 +3,6 @@
     :key="index"
     :todo="todo"
     @item-click="handleItemClick"
-></todos-item>
+>
+{{todo.text}}
+</todos-item>
