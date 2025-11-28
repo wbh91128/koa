@@ -1,7 +1,7 @@
 import { get_sql_query } from './local';
 
 class User {
-    username: String;
+    username: string;
     id: number;
 }
 export default User;
