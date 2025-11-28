@@ -26,7 +26,14 @@ function selectUser(username: string): ParameterizedQuery {
     return getSql(tableName, username);
 }
 
+// Named exports
 export {
     getSql,
     selectUser,
-}
+};
+
+// Default export for backward compatibility
+// Note: The function signature has changed from the original version
+// Old: getSql(tableName: string) => string
+// New: getSql(tableName: string, username: string) => ParameterizedQuery
+export default getSql;
