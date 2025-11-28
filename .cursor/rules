@@ -1,0 +1,5 @@
+---
+globs:
+alwaysApply: true
+---
+函数命名使用一律驼峰命名

@@ -7,7 +7,7 @@ interface ParameterizedQuery {
 // Note: SQL identifiers (table names) cannot be parameterized with ? placeholders
 const ALLOWED_TABLES = ['users', 'accounts', 'profiles'] as const;
 
-function getSql(tableName: string, username: string): ParameterizedQuery {
+function get_sql_query(tableName: string, username: string): ParameterizedQuery {
     // Validate table name against whitelist to prevent SQL injection
     if (!ALLOWED_TABLES.includes(tableName as any)) {
         throw new Error(`Invalid table name: ${tableName}. Allowed tables: ${ALLOWED_TABLES.join(', ')}`);
@@ -23,17 +23,13 @@ function getSql(tableName: string, username: string): ParameterizedQuery {
 
 function selectUser(username: string): ParameterizedQuery {
     const tableName = 'users';
-    return getSql(tableName, username);
+    return get_sql_query(tableName, username);
 }
 
 // Named exports
 export {
-    getSql,
+    get_sql_query,
     selectUser,
 };
 
-// Default export for backward compatibility
-// Note: The function signature has changed from the original version
-// Old: getSql(tableName: string) => string
-// New: getSql(tableName: string, username: string) => ParameterizedQuery
-export default getSql;
+export default get_sql_query;
