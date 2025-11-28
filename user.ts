@@ -1,3 +1,5 @@
-export default {
-    console.log('user.ts')
+class User {
+    username: string;
+    id: Number
 }
+export default User;

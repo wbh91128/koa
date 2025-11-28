@@ -1,9 +1,18 @@
-function getSql(tableName: string, username: string) {
-    console.log('getSql', tableName, username);
-    return `select * from ${tableName} where username = '${username}'`;
+interface ParameterizedQuery {
+    query: string;
+    params: string[];
 }
 
-function selectUser(username: string) {
+function getSql(tableName: string, username: string): ParameterizedQuery {
+    // Use parameterized query to prevent SQL injection
+    // The ? placeholder will be replaced by the database driver with the escaped parameter
+    return {
+        query: `select * from ${tableName} where username = ?`,
+        params: [username]
+    };
+}
+
+function selectUser(username: string): ParameterizedQuery {
     const tableName = 'users';
     return getSql(tableName, username);
 }
