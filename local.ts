@@ -4,7 +4,9 @@ function getSql(tableName:string) {
 }
 
 export function getUserTheme(themeId: string) {
+    console.debug("this debug code")
     return "Default Theme" + themeId;
+
 }
 
 export function log(message:string) {
